@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Screen0 extends StatelessWidget {
+  final VoidCallback onPressed1;
+  final VoidCallback onPressed2;
+
+  const Screen0({Key key, this.onPressed1, this.onPressed2}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,19 +15,15 @@ class Screen0 extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
-            RaisedButton(
-              color: Colors.red,
+            ElevatedButton(
+              // color: Colors.red,
               child: Text('Go To Screen 1'),
-              onPressed: () {
-                //Navigate to Screen 1
-              },
+              onPressed: onPressed1,
             ),
-            RaisedButton(
-              color: Colors.blue,
+            ElevatedButton(
+              // color: Colors.blue,
               child: Text('Go To Screen 2'),
-              onPressed: () {
-                //Navigate to Screen 2
-              },
+              onPressed: onPressed2,
             ),
           ],
         ),
